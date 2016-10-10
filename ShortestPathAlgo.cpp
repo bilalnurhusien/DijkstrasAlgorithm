@@ -80,31 +80,31 @@ void ShortestPathAlgo::PrintShortestPath(
 		//
 		std::pop_heap(openSet.begin(), openSet.end(), GreaterDistComp());
 
-		Path x = openSet.back();
+		Path minPath = openSet.back();
 
 		openSet.pop_back();
 
-		closedSet.push_back(x);
+		closedSet.push_back(minPath);
 
-		graph.GetNeighbours(x.vertex, neighbours);
+		graph.GetNeighbours(minPath.vertex, neighbours);
 
 		//
 		// Iterate through neighbours and update the distances in the open set
 		//
 		for (int i = 0; i < neighbours.size(); ++i)
 		{
-			if (graph.IsAdjacent(x.vertex, neighbours[i]))
+			if (graph.IsAdjacent(minPath.vertex, neighbours[i]))
 			{
-				Path edge = {neighbours[i], graph.GetEdgeValue(x.vertex, neighbours[i])};
+				Path neighbour = {neighbours[i], graph.GetEdgeValue(minPath.vertex, neighbours[i])};
 
 				for (auto& it : openSet)
 				{
-					if (edge.vertex == it.vertex &&
-						(x.distance + edge.distance) < it.distance)
+					if (neighbour.vertex == it.vertex &&
+						(minPath.distance + neighbour.distance) < it.distance)
 					{
-						it.path = x.path + " -> " + std::to_string(it.vertex + 1);
+						it.path = minPath.path + " -> " + std::to_string(it.vertex + 1);
 
-						it.distance = x.distance + edge.distance;
+						it.distance = minPath.distance + neighbour.distance;
 					}
 				}
 			}
