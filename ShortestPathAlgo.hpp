@@ -16,7 +16,7 @@ public:
 	//
 	// Description:
 	//
-	//		Prints the shortest path between two vertices (source and end vertices)
+	//		Prints the shortest path between the source and end vertices
 	//		If the end vertex is -1, it prints all shortest paths from the source vertex
 	//		It also prints the total distance of the shortest path.
 	//

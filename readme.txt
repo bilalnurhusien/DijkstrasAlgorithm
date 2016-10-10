@@ -11,13 +11,13 @@ Description:
 
 	1. The Graph class is used to create and store a 2 dimensional graph using an
 	adjacency matrix. The Graph class has two constructors. One constructor can be
-	used to generate a undirectional graph, using a density and size parameter.
+	used to generate a undirectional graph using a density and size parameter.
 	The other Graph constructor is used to initialize the graph directly using a 2
 	dimensional vector.
 
 	2. The ShortestPathAlgo class uses Dijkstra's algorithm to determine the shortest
 	path between two vertices. It uses std::make_heap to create a min heap (priority queue)
-	that is usedin Dijkstra's algorithm. The class also uses comparators to compare
+	that is used in Dijkstra's algorithm. The class also uses comparators to compare
 	two vertices and determine the next shortest path. The ShortestPathAlgo has one
 	static method that can be used without initialzing the class. The method is called
 	PrintShortestPath() which prints the shortest path between every vertex and the
