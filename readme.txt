@@ -24,5 +24,4 @@ Description:
 	the method can also print the shortest path between two vertices.
 
 	Finally, main.cpp contains the entry point of the program. It has several assert statements
-	to test the classes. It also contains some unit tests for the Graph class. The main program
-	outputs the graph contents and the shortest path from the source vertex.
+	to test the classes. The main program outputs the graph contents and the shortest path from the source vertex.
