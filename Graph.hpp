@@ -8,9 +8,6 @@
 #include <vector>
 #include <iostream>
 
-//
-// INFINITY_INT - used for an edge that doesn't exist between two vertices
-//
 static const int INFINITY_INT = std::numeric_limits<int>::max();
 
 class Graph
