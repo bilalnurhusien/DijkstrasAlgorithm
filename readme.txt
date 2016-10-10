@@ -4,6 +4,7 @@ Brief:
 
 	This program was created for the C++ for C programmers Part 1 course on coursera.
 	It uses Dijkstra's algorithm to compute the shortest path between two vertices.
+	To compile the code, run make. To run the program, enter ./main
 
 Description:
 
