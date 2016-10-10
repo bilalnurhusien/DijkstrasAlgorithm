@@ -91,9 +91,9 @@ int Graph::GetEdgeValue(int x, int y) const
 		return INFINITY_INT;
 	}
 
-	if (x >= m_graphMatrix.size())
+	if (y >= m_graphMatrix[x].size())
 	{
-		return INFINITY_INT;
+		return false;
 	}
 
 	return m_graphMatrix[x][y];
@@ -106,7 +106,7 @@ bool Graph::SetEdgeValue(int x, int y, int value)
 		return false;
 	}
 
-	if (x >= m_graphMatrix.size())
+	if (y >= m_graphMatrix[x].size())
 	{
 		return false;
 	}
