@@ -47,9 +47,9 @@ void ShortestPathAlgo::PrintShortestPath(
 	std::vector<Path> openSet;
 
 	//
-	// Start at source vertex
+	// Start at source vertex with distance zero
 	//
-	Path source = {sourceVertex, sourceVertex};
+	Path source = {sourceVertex, 0};
 
 	//
 	// Vertex id starts at 1
