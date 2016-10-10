@@ -10,7 +10,7 @@
 //
 // Test graph 1 used for unit testing
 //
-std::vector<std::vector<int>> TestGraph1 = {{0, 1, 2, 4, 8, 16},
+std::vector<std::vector<int>> TestGraph1 =	{{0, 1, 2, 4, 8, 16},
 											{1, 0, INFINITY_INT, 1, 1, 2},
 											{2, INFINITY_INT, 0, INFINITY_INT, 1, INFINITY_INT},
 											{4, 1, INFINITY_INT, 0, 4, 1},
@@ -20,7 +20,7 @@ std::vector<std::vector<int>> TestGraph1 = {{0, 1, 2, 4, 8, 16},
 //
 // Test graph 2 used for unit testing
 //
-std::vector<std::vector<int>> TestGraph2 = {{0, 100, 200, 50},
+std::vector<std::vector<int>> TestGraph2 =	{{0, 100, 200, 50},
 											{INFINITY_INT, 0, 75, INFINITY_INT},
 											{INFINITY_INT, INFINITY_INT, 0, INFINITY_INT},
 											{INFINITY_INT, 45, 85, 0}};
