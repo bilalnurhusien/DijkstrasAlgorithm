@@ -19,7 +19,7 @@ Description:
 	path between two vertices. It uses std::make_heap to create a min heap (priority queue)
 	that is usedin Dijkstra's algorithm. The class also uses comparators to compare
 	two vertices and determine the next shortest path. The ShortestPathAlgo has one
-	static method that	can be used without initialzing the class. The method is called
+	static method that can be used without initialzing the class. The method is called
 	PrintShortestPath() which prints the shortest path between every vertex and the
 	source vertex. Alternatively,the method can also print the shortest path between two vertices.
 
