@@ -12,7 +12,7 @@ Description:
 	1. The Graph class is used to create and store a 2 dimensional graph using an
 	adjacency matrix. The Graph class has two constructors. One constructor can be
 	used to generate a undirectional graph, using a density and size parameter.
-	The other Graphconstructor is used to initialize the graph directly using a 2
+	The other Graph constructor is used to initialize the graph directly using a 2
 	dimensional vector.
 
 	2. The ShortestPathAlgo class uses Dijkstra's algorithm to determine the shortest
