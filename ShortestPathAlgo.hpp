@@ -22,14 +22,11 @@ public:
 	//
 	// Parameters:
 	//
-	//		int densityPercentage - Density of the graph
+	//		Graph& graph - graph
 	//
-	//		int size - Size of the graph (size x size)
+	//		int sourceVertex - source vertex, default is 0
 	//
-	//		int minDistRange - Minimum distance for an edge that exists
-	//
-	//		int maxDistRange - Maximum distace for an edge that exists
-	//
+	//		int endVertex - end vertex, default is -1 which means find the shortest path to every vertex on graph
 	//
 	static void PrintShortestPath(
 		const Graph& graph,
