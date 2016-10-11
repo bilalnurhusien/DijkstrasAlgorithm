@@ -73,7 +73,7 @@ void ShortestPathAlgo::PrintShortestPath(
 	while (false == openSet.empty())
 	{
 		//
-		// Pop min value from min heap
+		// Remove minimum edge from open set heap
 		//
 		std::pop_heap(openSet.begin(), openSet.end(), GreaterDistComp());
 
@@ -81,10 +81,19 @@ void ShortestPathAlgo::PrintShortestPath(
 
 		openSet.pop_back();
 
+		//
+		// Add minimum edge to closed set
+		//
 		closedSet.push_back(minPath);
 
+		//
+		// Get all neighbours of a vertex
+		//
 		graph.GetNeighbours(minPath.vertex, neighbours);
 
+		//
+		// Flag used to know when to update the open set heap
+		//
 		bool updateHeap = false;
 
 		//
@@ -116,7 +125,7 @@ void ShortestPathAlgo::PrintShortestPath(
 		if (updateHeap)
 		{
 			//
-			// Update heap since we changed the edge values
+			// Update heap since we changed one or more edge values
 			//
 			std::make_heap(openSet.begin(), openSet.end(), GreaterDistComp());
 		}
