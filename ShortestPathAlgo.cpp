@@ -51,10 +51,7 @@ void ShortestPathAlgo::PrintShortestPath(
 	//
 	Path source = {sourceVertex, 0};
 
-	//
-	// Vertex id starts at 1
-	//
-	source.path = std::to_string(sourceVertex + 1);
+	source.path = std::to_string(sourceVertex);
 
 	openSet.push_back(source);
 
@@ -68,13 +65,13 @@ void ShortestPathAlgo::PrintShortestPath(
 
 	std::vector<int> neighbours;
 
+	//
+	// Use std::make_heap to create a min heap
+	//
+	std::make_heap(openSet.begin(), openSet.end(), GreaterDistComp());
+
 	while (false == openSet.empty())
 	{
-		//
-		// Use std::make_heap to create a min heap
-		//
-		std::make_heap(openSet.begin(), openSet.end(), GreaterDistComp());
-
 		//
 		// Pop min value from min heap
 		//
@@ -88,26 +85,40 @@ void ShortestPathAlgo::PrintShortestPath(
 
 		graph.GetNeighbours(minPath.vertex, neighbours);
 
+		bool updateHeap = false;
+
 		//
 		// Iterate through neighbours and update the distances in the open set
 		//
 		for (int i = 0; i < neighbours.size(); ++i)
 		{
-			if (graph.IsAdjacent(minPath.vertex, neighbours[i]))
+			Path neighbour =
 			{
-				Path neighbour = {neighbours[i], graph.GetEdgeValue(minPath.vertex, neighbours[i])};
+				neighbours[i],
+				minPath.distance + graph.GetEdgeValue(minPath.vertex, neighbours[i]),
+				minPath.path + " -> " + std::to_string(neighbours[i])
+			};
 
-				for (auto& it : openSet)
+			for (auto& it : openSet)
+			{
+				if (neighbour.vertex == it.vertex &&
+					neighbour.distance < it.distance)
 				{
-					if (neighbour.vertex == it.vertex &&
-						(minPath.distance + neighbour.distance) < it.distance)
-					{
-						it.path = minPath.path + " -> " + std::to_string(it.vertex + 1);
+					it.path = neighbour.path;
 
-						it.distance = minPath.distance + neighbour.distance;
-					}
+					it.distance = neighbour.distance;
+
+					updateHeap = true;
 				}
 			}
+		}
+
+		if (updateHeap)
+		{
+			//
+			// Update heap since we changed the edge values
+			//
+			std::make_heap(openSet.begin(), openSet.end(), GreaterDistComp());
 		}
 	}
 
@@ -132,7 +143,7 @@ void ShortestPathAlgo::PrintShortestPath(
 			(endVertex == explored.vertex ||
 			 endVertex == -1))
 		{
-			std::cout << "Total Distance from vertex 1 to " << explored.vertex + 1 << " is " << explored.distance << " (Shortest Path: " << explored.path << ")" << std::endl;
+			std::cout << "Total Distance from vertex " << sourceVertex << " to " << explored.vertex << " is " << explored.distance << " (Shortest Path: " << explored.path << ")" << std::endl;
 		}
 	}
 
