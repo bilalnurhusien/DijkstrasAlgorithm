@@ -41,9 +41,12 @@ void ShortestPathAlgo::PrintShortestPath(
 {
 	//
 	// Closed set contains all explored vertices
-	// Open set contains all unexplored vertics
 	//
 	std::vector<Path> closedSet;
+
+	//
+	// Open set contains all unexplored vertics
+	//
 	std::vector<Path> openSet;
 
 	//
