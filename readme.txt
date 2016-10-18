@@ -12,7 +12,7 @@ Description:
 
 	1. The Graph class is used to create and store a 2 dimensional graph using an
 	adjacency matrix. The Graph class has two constructors. One constructor can be
-	used to generate an undirectional graph using a density and size parameter.
+	used to generate an undirected graph using a density and size parameter.
 	The other Graph constructor is used to initialize the graph directly using a 2
 	dimensional vector.
 
